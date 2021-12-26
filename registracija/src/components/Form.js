@@ -30,6 +30,7 @@ const Form = () => {
           <label>Confirm Password:</label>
           <input type="text" name="passwordC" />
         </div>
+        <input type="submit" value="Submit" />
       </form>
     </div>
   );

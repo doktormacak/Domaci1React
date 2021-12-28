@@ -1,22 +1,9 @@
 import { useState } from "react";
+import useForm from "../hooks/useForm";
 
 const Form = () => {
-  const [value, setValue] = useState({
-    username: "",
-    firstname: "",
-    lastname: "",
-    email: "",
-    password: "",
-    passwordC: "",
-  });
-  const handleChange = (event) => {
-    setValue({ ...value, [event.target.name]: event.target.value });
-  };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    alert("Submitted! ");
-    console.log(event);
-  };
+  const { values, errors, handleChange, handleSubmit } = useForm();
+
   return (
     <div className="form">
       <form onSubmit={handleSubmit}>
@@ -25,7 +12,7 @@ const Form = () => {
           <input
             type="text"
             name="username"
-            value={value.username}
+            value={values.username}
             placeholder="Username"
             onChange={handleChange}
           />
@@ -35,7 +22,7 @@ const Form = () => {
           <input
             type="text"
             name="firstname"
-            value={value.firstname}
+            value={values.firstname}
             placeholder="First name"
             onChange={handleChange}
           />
@@ -45,7 +32,7 @@ const Form = () => {
           <input
             type="text"
             name="lastname"
-            value={value.lastname}
+            value={values.lastname}
             placeholder="Last name"
             onChange={handleChange}
           />
@@ -55,7 +42,7 @@ const Form = () => {
           <input
             type="email"
             name="email"
-            value={value.email}
+            value={values.email}
             placeholder="E-mail"
             onChange={handleChange}
           />
@@ -65,7 +52,7 @@ const Form = () => {
           <input
             type="password"
             name="password"
-            value={value.password}
+            value={values.password}
             placeholder="Password"
             onChange={handleChange}
           />
@@ -75,7 +62,7 @@ const Form = () => {
           <input
             type="password"
             name="passwordC"
-            value={value.passwordC}
+            value={values.passwordC}
             placeholder="Password"
             onChange={handleChange}
           />
@@ -87,6 +74,3 @@ const Form = () => {
 };
 
 export default Form;
-
-// Potrebno je napraviti Registracionu formu sa poljima username, firstname, lastname, email,
-// password i confirmPassword. Dizajn možete odraditi po svom izboru

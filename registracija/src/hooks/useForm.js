@@ -2,23 +2,20 @@ import { useState } from "react";
 
 const useForm = () => {
   // Vrijednosti unosa
-  const [values, setValues] = useState({
-    username: "",
-    firstname: "",
-    lastname: "",
-    email: "",
-    password: "",
-    passwordC: "",
-  });
+  const [values, setValues] = useState({});
 
   // Errori
   const [errors, setErrors] = useState({});
 
   // Funkcija za validaciju
-  const ValidateInputs = (values, errors, setErrors) => {
+  const ValidateInputs = (values, setErrors) => {
     let temp = {};
 
-    if (values.username.length < 6 || values.username.length > 12) {
+    if (
+      !values.username ||
+      values.username.length < 6 ||
+      values.username.length > 12
+    ) {
       temp = {
         ...temp,
         username: "Username mora sadržati minimum 6, a maksimum 12 karaktera",
@@ -58,7 +55,7 @@ const useForm = () => {
     }
 
     // Validacija passsword-a
-    if (values.password.length < 8) {
+    if (!values.password || values.password.length < 8) {
       temp = {
         ...temp,
         password:
@@ -82,6 +79,12 @@ const useForm = () => {
       };
     }
     setErrors(temp);
+
+    if (Object.keys(temp).length === 0) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
   const handleChange = (event) => {
@@ -90,7 +93,9 @@ const useForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    ValidateInputs(values, errors, setErrors);
+    if (ValidateInputs(values, setErrors) && Object.keys(values).length !== 0) {
+      console.log("Submitting!");
+    }
   };
 
   return { values, errors, setErrors, handleChange, handleSubmit };

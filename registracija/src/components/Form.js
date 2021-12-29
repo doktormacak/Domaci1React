@@ -5,7 +5,7 @@ import useForm from "../hooks/useForm";
 import "../css/Form.css";
 
 const Form = () => {
-  const { values, errors, handleChange, handleSubmit } = useForm();
+  const { errors, handleChange, handleSubmit } = useForm();
 
   return (
     <div className="form">
@@ -16,7 +16,6 @@ const Form = () => {
             className={errors.username ? "error" : ""}
             type="text"
             name="username"
-            value={values.username}
             placeholder="Username"
             onChange={handleChange}
           />
@@ -29,7 +28,6 @@ const Form = () => {
           <input
             type="text"
             name="firstname"
-            value={values.firstname}
             placeholder="First name"
             onChange={handleChange}
           />
@@ -42,7 +40,6 @@ const Form = () => {
           <input
             type="text"
             name="lastname"
-            value={values.lastname}
             placeholder="Last name"
             onChange={handleChange}
           />
@@ -55,7 +52,6 @@ const Form = () => {
           <input
             type="text"
             name="email"
-            value={values.email}
             placeholder="E-mail"
             onChange={handleChange}
           />
@@ -66,7 +62,6 @@ const Form = () => {
           <input
             type="password"
             name="password"
-            value={values.password}
             placeholder="Password"
             onChange={handleChange}
           />
@@ -79,7 +74,6 @@ const Form = () => {
           <input
             type="password"
             name="passwordC"
-            value={values.passwordC}
             placeholder="Password"
             onChange={handleChange}
           />
@@ -87,7 +81,7 @@ const Form = () => {
             <p className="error-message">{errors.passwordC}</p>
           )}
         </div>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" onSubmit={handleSubmit} />
       </form>
     </div>
   );

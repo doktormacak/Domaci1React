@@ -1,8 +1,7 @@
-import { useState } from "react";
 import useForm from "../hooks/useForm";
 
 const Form = () => {
-  const { values, errors, handleChange, handleSubmit } = useForm();
+  const { values, handleChange, handleSubmit } = useForm();
 
   return (
     <div className="form">
@@ -40,7 +39,7 @@ const Form = () => {
         <div className="form-item">
           <label>Email:</label>
           <input
-            type="email"
+            type="text"
             name="email"
             value={values.email}
             placeholder="E-mail"

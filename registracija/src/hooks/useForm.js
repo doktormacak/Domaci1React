@@ -22,7 +22,7 @@ const useForm = () => {
     console.log(x);
   };
 
-  return { values, errors, handleChange, handleSubmit };
+  return { values, handleChange, handleSubmit };
 };
 
 export default useForm;

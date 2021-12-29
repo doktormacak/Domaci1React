@@ -1,4 +1,8 @@
+// Imports
 import useForm from "../hooks/useForm";
+
+// Styling
+import "../css/Form.css";
 
 const Form = () => {
   const { values, errors, handleChange, handleSubmit } = useForm();

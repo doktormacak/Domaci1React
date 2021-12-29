@@ -1,0 +1,17 @@
+.form {
+  width: 50%;
+  height: auto;
+}
+
+.form-item {
+  background-color: aqua;
+}
+
+.error {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: small;
+}

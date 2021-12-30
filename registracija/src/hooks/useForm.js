@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useForm = () => {
+const useForm = (formSubmit) => {
   // Vrijednosti unosa
   const [values, setValues] = useState({});
 
@@ -94,7 +94,7 @@ const useForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (ValidateInputs(values, setErrors) && Object.keys(values).length !== 0) {
-      console.log("Submitting!");
+      formSubmit(values);
     }
   };
 

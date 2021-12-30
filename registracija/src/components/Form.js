@@ -5,7 +5,28 @@ import useForm from "../hooks/useForm";
 import "../css/Form.css";
 
 const Form = () => {
-  const { errors, handleChange, handleSubmit } = useForm();
+  const formSubmit = (values) => {
+    console.log("Submitting!");
+    fetch("https://jsonblob.com/api/jsonBlob", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        redirect: "follow",
+      },
+      body: JSON.stringify(values),
+    })
+      .then((response) => {
+        let blobUrl = response.headers.get("Location");
+        // "ovdje se nalazi url gdje je sacuvan json", Yoink!
+        console.log(blobUrl, "BLOB URL");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const { errors, handleChange, handleSubmit } = useForm(formSubmit);
 
   return (
     <div className="form">

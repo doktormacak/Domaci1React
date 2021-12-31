@@ -29,10 +29,9 @@ const Form = () => {
   const { errors, handleChange, handleSubmit } = useForm(formSubmit);
 
   return (
-    <div className="form">
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
         <div className="form-item">
-          <label>Username:</label>
           <input
             className={errors.username ? "error" : ""}
             type="text"
@@ -45,8 +44,8 @@ const Form = () => {
           )}
         </div>
         <div className="form-item">
-          <label>First name:</label>
           <input
+            className={errors.firstname ? "error" : ""}
             type="text"
             name="firstname"
             placeholder="First name"
@@ -57,8 +56,8 @@ const Form = () => {
           )}
         </div>
         <div className="form-item">
-          <label>Last name:</label>
           <input
+            className={errors.lastname ? "error" : ""}
             type="text"
             name="lastname"
             placeholder="Last name"
@@ -69,8 +68,8 @@ const Form = () => {
           )}
         </div>
         <div className="form-item">
-          <label>Email:</label>
           <input
+            className={errors.email ? "error" : ""}
             type="text"
             name="email"
             placeholder="E-mail"
@@ -79,8 +78,8 @@ const Form = () => {
           {errors.email && <p className="error-message">{errors.email}</p>}
         </div>
         <div className="form-item">
-          <label>Password:</label>
           <input
+            className={errors.password ? "error" : ""}
             type="password"
             name="password"
             placeholder="Password"
@@ -91,8 +90,8 @@ const Form = () => {
           )}
         </div>
         <div className="form-item">
-          <label>Confirm Password:</label>
           <input
+            className={errors.passwordC ? "error" : ""}
             type="password"
             name="passwordC"
             placeholder="Password"
@@ -102,7 +101,12 @@ const Form = () => {
             <p className="error-message">{errors.passwordC}</p>
           )}
         </div>
-        <input type="submit" value="Submit" onSubmit={handleSubmit} />
+        <input
+          type="submit"
+          value="Submit"
+          onSubmit={handleSubmit}
+          className="button-submit"
+        />
       </form>
     </div>
   );

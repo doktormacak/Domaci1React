@@ -7,8 +7,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route path="/editpost" element={<EditPost />} />
+        <Route path="/" element={<Layout />}>
+          <Route element={<Post />} />
+          <Route path="editpost" element={<EditPost />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

@@ -1,0 +1,34 @@
+.form-container {
+  width: auto;
+  height: auto;
+  column-span: inherit;
+}
+
+.form-item {
+  margin: 10px 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background-color: white;
+  color: #c868b8;
+}
+
+.form-item input {
+  width: 100%;
+  height: 30px;
+}
+
+.button-submit {
+  margin: auto;
+  border: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.error {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: small;
+}

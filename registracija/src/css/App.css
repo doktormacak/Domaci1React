@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+  margin: 5% auto;
+  width: 60%;
+  height: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  background-color: rgb(235, 240, 255);
+  column-count: 2;
+  column-width: 250px;
+}
+
+.card a {
+  margin: 0 auto;
+  text-decoration: none;
+  color: lightgray;
+}
+
+.left-side {
+  column-span: none;
+  height: 100%;
+  break-inside: avoid;
+}
+
+.right-side img {
+  width: 100%;
+  height: 100%;
+}

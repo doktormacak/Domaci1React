@@ -1,4 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
+import PostDisplay from "../components/PostDisplay";
+import "./Layout.css";
 
 const Layout = () => {
   return (
@@ -15,6 +17,15 @@ const Layout = () => {
           </div>
         </div>
       </nav>
+
+      <div className="posts-container">
+        <PostDisplay />
+        <PostDisplay />
+        <PostDisplay />
+        <PostDisplay />
+        <PostDisplay />
+        <PostDisplay />
+      </div>
 
       <Outlet />
     </>

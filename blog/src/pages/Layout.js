@@ -13,7 +13,7 @@ const Layout = () => {
             </Link>
           </div>
           <div>
-            <a href="">Test</a>
+            <Link to="/EditPost">New Post</Link>
           </div>
         </div>
       </nav>

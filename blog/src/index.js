@@ -15,7 +15,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Posts />} />
-          <Route element={<Post />} />
+          <Route path=":postId" element={<Post />} />
           <Route path="editpost" element={<EditPost />} />
         </Route>
       </Routes>

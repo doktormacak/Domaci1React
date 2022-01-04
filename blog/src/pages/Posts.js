@@ -1,22 +1,22 @@
 // Component imports
 import PostDisplay from "../components/PostDisplay";
+import getPosts from "../getPosts";
 
 // Styling imports
 import "./Posts.css";
 
-const Layout = () => {
+const Posts = () => {
+  let postsArray = getPosts();
+  console.log(postsArray);
   return (
     <>
       <div className="posts-container">
-        <PostDisplay />
-        <PostDisplay />
-        <PostDisplay />
-        <PostDisplay />
-        <PostDisplay />
-        <PostDisplay />
+        {postsArray.map((post) => (
+          <PostDisplay toPost={`/${post.number}`} postKey={post.number} />
+        ))}
       </div>
     </>
   );
 };
 
-export default Layout;
+export default Posts;

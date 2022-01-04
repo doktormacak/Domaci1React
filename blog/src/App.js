@@ -1,9 +1,6 @@
 // Module import
 import { Link, Outlet } from "react-router-dom";
 
-// Styling imports
-import "./App.css";
-
 function App() {
   return (
     <div>

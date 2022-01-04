@@ -18,6 +18,8 @@ const Layout = () => {
         </div>
       </nav>
 
+      <Outlet />
+
       <div className="posts-container">
         <PostDisplay />
         <PostDisplay />
@@ -26,8 +28,6 @@ const Layout = () => {
         <PostDisplay />
         <PostDisplay />
       </div>
-
-      <Outlet />
     </>
   );
 };

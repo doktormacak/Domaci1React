@@ -1,19 +1,7 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
-import Post from "./pages/Post";
-import EditPost from "./pages/EditPost";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route element={<Post />} />
-          <Route path="editpost" element={<EditPost />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+  return <Layout />;
 }
 
 export default App;

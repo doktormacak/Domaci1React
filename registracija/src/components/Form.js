@@ -1,5 +1,6 @@
-// Imports
+// Component imports
 import useForm from "../hooks/useForm";
+import CreateNotification from "../components/CreateNotification";
 
 // Styling
 import "../css/Form.css";
@@ -20,6 +21,7 @@ const Form = () => {
         let blobUrl = response.headers.get("Location");
         // "ovdje se nalazi url gdje je sacuvan json", Yoink!
         console.log(blobUrl, "BLOB URL");
+        CreateNotification("success");
       })
       .catch((error) => {
         console.log(error);

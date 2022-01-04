@@ -1,4 +1,8 @@
+// Module imports
 import { useState } from "react";
+
+// Component imports
+import CreateNotification from "../components/CreateNotification";
 
 const useForm = (formSubmit) => {
   // Vrijednosti unosa
@@ -95,6 +99,8 @@ const useForm = (formSubmit) => {
     event.preventDefault();
     if (ValidateInputs(values, setErrors) && Object.keys(values).length !== 0) {
       formSubmit(values);
+    } else {
+      CreateNotification("error");
     }
   };
 

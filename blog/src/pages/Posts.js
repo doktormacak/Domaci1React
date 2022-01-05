@@ -13,6 +13,8 @@ const Posts = () => {
   return (
     <>
       <div className="posts-container">
+        {error && <div>{error}</div>}
+        {isPending && <div>Loading...</div>}
         {data ? (
           data.map((post) => (
             <PostDisplay toPost={`/${post.number}`} postKey={post.number} />

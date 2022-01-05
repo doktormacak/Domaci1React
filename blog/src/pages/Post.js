@@ -16,18 +16,23 @@ const Post = () => {
   console.log("data: ", data);
 
   const postData = data.filter((post) => post.id !== postId);
-
   console.log("postData: ", postData);
 
   return (
     <div className="post-container">
-      <div className="post-header">
-        <h1>Post Title</h1>
-        <p>Post Author</p>
-      </div>
-      <div className="post-body">
-        <p>Post text..</p>
-      </div>
+      {error && <div>{error}</div>}
+      {isPending && <div>Loading...</div>}
+      {postData && (
+        <>
+          <div className="post-header">
+            <h1>Post Title</h1>
+            <p>Post Author</p>
+          </div>
+          <div className="post-body">
+            <p>Post text..</p>
+          </div>
+        </>
+      )}
     </div>
   );
 };

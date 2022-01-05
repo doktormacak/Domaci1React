@@ -1,6 +1,6 @@
 // Component imports
 import PostDisplay from "../components/PostDisplay";
-import getPosts from "../getPosts";
+import getPosts from "../components/getPosts";
 
 // Styling imports
 import "./Posts.css";

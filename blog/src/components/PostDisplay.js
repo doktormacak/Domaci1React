@@ -9,7 +9,7 @@ const PostDisplay = (props) => {
       <div className="container">
         <h4>Post Title: {props.postKey}</h4>
       </div>
-      <Link to={props.toPost}>Link!</Link>
+      <Link to={props.toPost}>Post page.</Link>
     </div>
   );
 };

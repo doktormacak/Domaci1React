@@ -1,0 +1,14 @@
+.post-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: cornflowerblue;
+  margin: 20px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.post-container h1 {
+  font-size: 35px;
+  font-weight: 800;
+}

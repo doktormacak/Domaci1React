@@ -13,10 +13,6 @@ const Post = () => {
   const { data, isPending, error } = useFetch(
     "http://jsonblob.com/928319228822700032"
   );
-  console.log("data: ", data);
-
-  const postData = data.filter((post) => post.id !== postId);
-  console.log("postData: ", postData);
 
   return (
     <div className="post-container">

@@ -1,31 +1,42 @@
 // Module imports
+import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-
-// Component imports
-import useFetch from "../hooks/useFetch";
 
 //Style imports
 import "./Post.css";
 
 const Post = () => {
+  const [postData, setPostData] = useState({});
   const params = useParams();
   const postId = params.postId;
-  const { data, isPending, error } = useFetch(
-    "http://jsonblob.com/928319228822700032"
+
+  useEffect(
+    () =>
+      fetch("https://jsonblob.com/api/jsonBlob/928319228822700032", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          let filteredPost = data.find((post) => post.id === postId);
+          setPostData(filteredPost);
+        }),
+    [postId]
   );
 
   return (
     <div className="post-container">
-      {error && <div>{error}</div>}
-      {isPending && <div>Loading...</div>}
       {postData && (
         <>
           <div className="post-header">
-            <h1>Post Title</h1>
-            <p>Post Author</p>
+            <h1>{postData.title}</h1>
+            <p>{postData.author}</p>
           </div>
           <div className="post-body">
-            <p>Post text..</p>
+            <p>{postData.body}</p>
           </div>
         </>
       )}

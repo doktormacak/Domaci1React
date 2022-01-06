@@ -7,7 +7,7 @@ const PostDisplay = (props) => {
     <div className="card">
       <img src="img_avatar.png" alt="Avatar" style={{ width: "100%" }} />
       <div className="container">
-        <h4>Post Title: {props.postKey}</h4>
+        <h4>Post Title: {props.post.title}</h4>
       </div>
       <Link to={props.toPost}>Post page.</Link>
     </div>

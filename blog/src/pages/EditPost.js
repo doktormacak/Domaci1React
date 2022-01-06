@@ -21,7 +21,6 @@ const EditPost = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { title, body, url, author };
     fetch("https://jsonblob.com/api/jsonBlob/928319228822700032", {
       method: "GET",
       headers: {
@@ -31,9 +30,11 @@ const EditPost = () => {
     })
       .then((response) => response.json())
       .then((blobOld) => {
-        let newPostId = blobOld.length + 1;
-        console.log("postId: ", newPostId);
+        let newPostId = "0";
         let blobNew = [];
+        if (blobOld.length !== 0) {
+          newPostId = blobOld.length.toString();
+        }
         blobNew = blobOld;
         blobNew.push({ title, body, url, author, id: newPostId });
         sendData(blobNew);

@@ -1,34 +1,24 @@
 // Module imports
 import { NotificationManager } from "react-notifications";
 
+/**
+ * CreateNotification komponenta kreira odgovarajuci tip notifikacije u zavsnosti od proslijedjenog prop-a
+ * pomocu switch-a i NotificationManager-a iz react-notifications biblioteke.
+ */
 const CreateNotification = (type) => {
-  console.log("Creating notification...");
-  console.log(type);
   switch (type) {
-    case "info":
-      NotificationManager.info("Info message");
-      break;
     case "success":
       NotificationManager.success(
         "Uspjesno kreiranje novog naloga!",
-        "Succes!"
-      );
-      break;
-    case "warning":
-      NotificationManager.warning(
-        "Warning message",
-        "Close after 3000ms",
-        3000
+        "Succes!",
+        5000
       );
       break;
     case "error":
       NotificationManager.error(
         "Molimo provjerite unos podataka!",
         "Error!",
-        5000,
-        () => {
-          alert("callback");
-        }
+        5000
       );
       break;
     default:

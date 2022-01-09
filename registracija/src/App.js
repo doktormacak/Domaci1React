@@ -10,6 +10,10 @@ import "./css/App.css";
 import image from "./images/image.png";
 import "react-notifications/lib/notifications.css";
 
+/**
+ * App komponenta renderuje vanjske div elemente, Form komponentu unutar njih
+ * i NotificationContainer komponentu na dnu, za react-notifications biblioteku.
+ */
 function App() {
   return (
     <div className="card">

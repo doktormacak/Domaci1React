@@ -5,11 +5,21 @@ import { useParams } from "react-router";
 //Style imports
 import "./Post.css";
 
+/**
+ * 'Post' stranica renderuje individualni post tako sto procita ID iz parametara adrese
+ * i napravi fetch GET request da ucita njegove podatke.
+ */
 const Post = () => {
+  // Varijabla koja ce cuvati post objekat trazenog posta.
   const [postData, setPostData] = useState({});
+  // Varijabla koja ucitava parametre iz adrese.
   const params = useParams();
+  // Varijabla koja cuva postId iz parametara.
   const postId = params.postId;
 
+  // useEffect() hook poziva fetch GET request pri renderovanju stranice
+  // i malazi odgovarjuci post objekat pomocu .find() metode;
+  //'postId' varijabla sluzi kao dependency.
   useEffect(
     () =>
       fetch("https://jsonblob.com/api/jsonBlob/928319228822700032", {

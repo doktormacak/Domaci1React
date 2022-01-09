@@ -1,6 +1,13 @@
-// Module import
+// Module imports
 import { Link, Outlet } from "react-router-dom";
 
+/* 
+  App komponenta renderuje navbar na vrhu svake stranice.
+  Navbar sadrzi logo na lijevoj strani koji je ujedno i link ka root-u
+  i link za kreiranje novog post-a na desnoj strani.
+
+  'Outlet' komponenta iz react-router bibilioteke renderuje odgovarajucu stranicu ispod navbara.
+*/
 function App() {
   return (
     <div>

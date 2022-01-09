@@ -9,6 +9,11 @@ import Posts from "./pages/Posts";
 import Post from "./pages/Post";
 import EditPost from "./pages/EditPost";
 
+/* Unutar ReactDOM.render() metode prosljedjujemo routing strukturu iz React Router biblioteke.
+  Na adresi "/" se renderuju 'App' komponenta (kao root) i 'Posts' (kao index element).
+  'Post' stranica na adresi "/{postId}" cita postId iz adrese i izbacuje odgovarajuci post.
+  'EditPost' stranica na adresi "/editpost" se poziva pri kreaciji novog post-a i prima informacije, a zatim ih pohranjuje u JsonBlob.
+*/
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>

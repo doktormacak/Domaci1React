@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./EditPost.css";
 
@@ -7,6 +8,8 @@ const EditPost = () => {
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("");
   const [url, setUrl] = useState("");
+  //const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   function sendData(data) {
     fetch("https://jsonblob.com/api/928319228822700032", {
@@ -16,7 +19,11 @@ const EditPost = () => {
         Accept: "application/json",
       },
       body: JSON.stringify(data),
-    }).then((response) => console.log(response));
+    })
+      .then((response) => {
+        response.status === 200 && navigate("/");
+      })
+      .catch((err) => console.log("Error: ", err));
   }
 
   const handleSubmit = (e) => {

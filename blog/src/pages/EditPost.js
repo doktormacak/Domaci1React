@@ -10,13 +10,21 @@ import {
 import "./EditPost.css";
 import "react-notifications/lib/notifications.css";
 
+/**
+ * 'EditPost' stranica renderuje formu za kreiranje novog posta i
+ * azurira JsonBlob.
+ */
 const EditPost = () => {
+  // Stateful varijable za svaki podatak u postu
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("");
   const [url, setUrl] = useState("");
+  // navigate varijabla cuva useNavigate() hook iz React Routera
+  // za preusmjeravanje nakon uspjesne pohrane novog posta.
   const navigate = useNavigate();
 
+  // sendData poziva fetch PUT i azurira novo stanje bloba.
   function sendData(data) {
     fetch("https://jsonblob.com/api/928319228822700032", {
       method: "PUT",
@@ -41,6 +49,8 @@ const EditPost = () => {
       .catch((err) => console.log("Error: ", err));
   }
 
+  // handleSubmit funkcija preuzima staro stanje bloba, dodaje novonastali post i
+  // poziva sendData() funkciju da azurira blob 'novim' stanjem.
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch("https://jsonblob.com/api/jsonBlob/928319228822700032", {

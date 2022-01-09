@@ -1,14 +1,20 @@
+// Module imports
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  NotificationContainer,
+  NotificationManager,
+} from "react-notifications";
 
+// Styling imports
 import "./EditPost.css";
+import "react-notifications/lib/notifications.css";
 
 const EditPost = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("");
   const [url, setUrl] = useState("");
-  //const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate();
 
   function sendData(data) {
@@ -21,8 +27,17 @@ const EditPost = () => {
       body: JSON.stringify(data),
     })
       .then((response) => {
-        response.status === 200 && navigate("/");
+        response.status === 200 &&
+          NotificationManager.success(
+            "Post uspjesno kreairan! Preusmjeravam...",
+            "Uspjesno!"
+          );
       })
+      .then(
+        setTimeout(() => {
+          navigate("/");
+        }, 8000)
+      )
       .catch((err) => console.log("Error: ", err));
   }
 
@@ -84,6 +99,7 @@ const EditPost = () => {
 
         <button>Add Blog</button>
       </form>
+      <NotificationContainer />
     </div>
   );
 };

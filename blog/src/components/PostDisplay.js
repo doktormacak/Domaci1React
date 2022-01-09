@@ -1,7 +1,13 @@
-import "./PostDisplay.css";
-
+// Module imports
 import { Link } from "react-router-dom";
 
+//Styling imports
+import "./PostDisplay.css";
+
+/**
+ * PostDisplay komponenta prima post objekat i link ka id-ju tog posta iz props-a
+ * i renderuje taj post, sa 'Link' komponentom iz React Router-a.
+ */
 const PostDisplay = (props) => {
   return (
     <div className="card">

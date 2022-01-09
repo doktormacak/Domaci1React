@@ -29,14 +29,14 @@ const EditPost = () => {
       .then((response) => {
         response.status === 200 &&
           NotificationManager.success(
-            "Post uspjesno kreairan! Preusmjeravam...",
+            "Post uspjesno kreiran! Preusmjeravam...",
             "Uspjesno!"
           );
       })
       .then(
         setTimeout(() => {
           navigate("/");
-        }, 8000)
+        }, 5000)
       )
       .catch((err) => console.log("Error: ", err));
   }

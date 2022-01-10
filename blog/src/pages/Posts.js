@@ -17,7 +17,7 @@ const Posts = () => {
   // UseEffect hook poziva fetch GET request ka JsonBlob-u jednom pri prvom renderu 'Posts' stranice pomocu praznog dependency array-a.
   useEffect(
     () =>
-      fetch("https://jsonblob.com/api/jsonBlob/928319228822700032", {
+      fetch("https://jsonblob.com/api/jsonBlob/930081618446794752", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

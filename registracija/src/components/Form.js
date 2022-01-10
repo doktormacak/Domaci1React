@@ -1,10 +1,16 @@
-// Imports
+/* IMPORTS */
+// Components
 import useForm from "../hooks/useForm";
+import CreateNotification from "../components/CreateNotification";
 
 // Styling
 import "../css/Form.css";
 
+/**
+ * Form komponenta renderuje glavni form element.
+ */
 const Form = () => {
+  // krajnja submit funkcija za formu
   const formSubmit = (values) => {
     console.log("Submitting!");
     fetch("https://jsonblob.com/api/jsonBlob", {
@@ -20,12 +26,15 @@ const Form = () => {
         let blobUrl = response.headers.get("Location");
         // "ovdje se nalazi url gdje je sacuvan json", Yoink!
         console.log(blobUrl, "BLOB URL");
+        CreateNotification("success");
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
+  // errors varijabla za greske pri upisivanju informacij i handleri ucitani iz useForm
+  // hooka, kojem je proslijedjena submit funkcija kao callback.
   const { errors, handleChange, handleSubmit } = useForm(formSubmit);
 
   return (

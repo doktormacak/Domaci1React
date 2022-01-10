@@ -1,5 +1,15 @@
+/* IMPORTS */
+// Module imports
 import { useState } from "react";
 
+// Component imports
+import CreateNotification from "../components/CreateNotification";
+
+/**
+ * useForm je custom hook koji cuva state varijable za sve vrijednosti unosa u formu
+ * kao i gresaka nakon validacije, funkciju za validaciju, i onChange i onSubmit
+ * handler funkcije.
+ */
 const useForm = (formSubmit) => {
   // Vrijednosti unosa
   const [values, setValues] = useState({});
@@ -71,7 +81,7 @@ const useForm = (formSubmit) => {
         };
       }
     }
-    // Validacija passwordC-a
+    // Validacija passwordC-a (password Confirm)
     if (values.password !== values.passwordC) {
       temp = {
         ...temp,
@@ -91,10 +101,15 @@ const useForm = (formSubmit) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
+  // submit handler poziva funkciju za validaciju i ako nema gresaka, a postoje unosi,
+  // poziva formSubmit() callback funkciju.
+  // U slucaju da greske postoje, renderuje error notifikaciju pozivajuci CreateNotification komponentu.
   const handleSubmit = (event) => {
     event.preventDefault();
     if (ValidateInputs(values, setErrors) && Object.keys(values).length !== 0) {
       formSubmit(values);
+    } else {
+      CreateNotification("error");
     }
   };
 

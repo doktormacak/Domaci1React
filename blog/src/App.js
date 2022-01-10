@@ -1,5 +1,6 @@
 // Module imports
 import { Link, Outlet } from "react-router-dom";
+import 'materialize-css/dist/css/materialize.min.css'
 
 /* 
   App komponenta renderuje navbar na vrhu svake stranice.
@@ -10,21 +11,16 @@ import { Link, Outlet } from "react-router-dom";
 */
 function App() {
   return (
-    <div>
-      <nav>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div>
-            <Link to="/">
-              <img src="../../public/logo192.png" alt="logo" />
-            </Link>
-          </div>
-          <div>
-            <Link to="/EditPost">New Post</Link>
-          </div>
-        </div>
-      </nav>
-
-      <Outlet />
+    <div className="container">
+    <nav>
+      <div className="nav-wrapper">
+        <Link to="/" className="brand-logo">Logo</Link>
+        <ul id="nav-mobile" className="right hide-on-med-and-down">
+          <li><Link to="/EditPost">New Post</Link></li>
+        </ul>
+      </div>
+    </nav>
+    <Outlet />
     </div>
   );
 }

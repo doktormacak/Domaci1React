@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import PostDisplay from "../components/PostDisplay";
 
 // Styling imports
-import "./Posts.css";
+
 
 /**
  * 'Posts' stranica renderuje kratki prikaz svih postova iz JsonBlob-a.
@@ -36,7 +36,7 @@ const Posts = () => {
   // Ako je duzina 'posts' niza 0, nema postova u blobu.
   return (
     <>
-      <div className="posts-container">
+      <div className="row">
         {posts.length !== 0 ? (
           posts.map((post) => (
             <PostDisplay toPost={`/${post.id}`} post={post} />

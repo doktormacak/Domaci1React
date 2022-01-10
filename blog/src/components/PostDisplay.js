@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 //Styling imports
-import "./PostDisplay.css";
+
 
 /**
  * PostDisplay komponenta prima post objekat i link ka id-ju tog posta iz props-a
@@ -10,13 +10,20 @@ import "./PostDisplay.css";
  */
 const PostDisplay = (props) => {
   return (
-    <div className="card">
-      <img src="img_avatar.png" alt="Avatar" style={{ width: "100%" }} />
-      <div className="container">
-        <h4>Post Title: {props.post.title}</h4>
+      <div className="col s12 m4 l4">
+        <div className="card">
+          <div className="card-image">
+            <img src={require('./img.jpg')} alt="img"/>
+            <span className="card-title">{ props.post.title }</span>
+          </div>
+          <div className="card-content">
+            <p>{ props.post.author }</p>
+          </div>
+          <div className="card-action">
+            <Link to={props.toPost}>Post page</Link>
+          </div>
+        </div>
       </div>
-      <Link to={props.toPost}>Post page.</Link>
-    </div>
   );
 };
 

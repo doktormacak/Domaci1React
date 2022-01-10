@@ -7,7 +7,7 @@ import {
 } from "react-notifications";
 
 // Styling imports
-import "./EditPost.css";
+
 import "react-notifications/lib/notifications.css";
 
 /**
@@ -74,7 +74,7 @@ const EditPost = () => {
   };
 
   return (
-    <div className="newPost">
+    <div className="container">
       <h2>Add a New Blog</h2>
       <form className="form" onSubmit={handleSubmit}>
         <label>Blog title:</label>
@@ -102,12 +102,15 @@ const EditPost = () => {
         />
         <label>Blog body:</label>
         <textarea
+          id="textarea1"
+          className="materialize-textarea"
           required
           value={body}
           onChange={(e) => setBody(e.target.value)}
         ></textarea>
 
-        <button>Add Blog</button>
+        
+        <button className="btn-floating pulse" type="submit" name="action">Post Blog</button>
       </form>
       <NotificationContainer />
     </div>

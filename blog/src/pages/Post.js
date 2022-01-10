@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 
 //Style imports
-import "./Post.css";
+
 
 /**
  * 'Post' stranica renderuje individualni post tako sto procita ID iz parametara adrese
@@ -38,19 +38,25 @@ const Post = () => {
   );
 
   return (
-    <div className="post-container">
-      {postData && (
-        <>
-          <div className="post-header">
-            <h1>{postData.title}</h1>
-            <p>{postData.author}</p>
+
+    
+      <div className="container">
+        <div className="card">
+          {postData && (
+          <>
+          <div className="card-image">
+            <img src={require('../components/img.jpg')} alt="img"/>
+            <span className="card-title">{postData.title}</span>
           </div>
-          <div className="post-body">
-            <p>{postData.body}</p>
+          <div className="card-content">
+            <span>{postData.author}</span>
+            <p>{ postData.body}</p>
           </div>
-        </>
-      )}
-    </div>
+          </>
+          )}
+        </div>
+      </div>
+    
   );
 };
 

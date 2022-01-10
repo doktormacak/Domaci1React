@@ -26,7 +26,7 @@ const EditPost = () => {
 
   // sendData poziva fetch PUT i azurira novo stanje bloba.
   function sendData(data) {
-    fetch("https://jsonblob.com/api/928319228822700032", {
+    fetch("https://jsonblob.com/api/930081618446794752", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -53,7 +53,7 @@ const EditPost = () => {
   // poziva sendData() funkciju da azurira blob 'novim' stanjem.
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("https://jsonblob.com/api/jsonBlob/928319228822700032", {
+    fetch("https://jsonblob.com/api/jsonBlob/930081618446794752", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

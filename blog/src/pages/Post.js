@@ -22,7 +22,7 @@ const Post = () => {
   //'postId' varijabla sluzi kao dependency.
   useEffect(
     () =>
-      fetch("https://jsonblob.com/api/jsonBlob/928319228822700032", {
+      fetch("https://jsonblob.com/api/jsonBlob/930081618446794752", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

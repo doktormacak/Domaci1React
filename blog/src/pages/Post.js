@@ -45,7 +45,7 @@ const Post = () => {
           {postData && (
           <>
           <div className="card-image">
-            <img src={require('../components/img.jpg')} alt="img"/>
+            <img src={postData.url} alt="img"/>
             <span className="card-title">{postData.title}</span>
           </div>
           <div className="card-content">
